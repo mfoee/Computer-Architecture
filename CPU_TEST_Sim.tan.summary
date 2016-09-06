@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.390 ns
+From           : rst
+To             : cpu1:main_processor|reset:thereset|count[2]
+From Clock     : --
+To Clock       : cpuClk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 50.761 ns
+From           : cpu1:main_processor|DPandMMD:thedatapath|ALUa:aluman|tresult[11]
+To             : outC
+From Clock     : memClk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.050 ns
+From           : rst
+To             : cpu1:main_processor|reset:thereset|Enable_PD
+From Clock     : --
+To Clock       : cpuClk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'cpuClk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 18.25 MHz ( period = 54.786 ns )
+From           : cpu1:main_processor|control:thecontrol|ALU_op[0]
+To             : cpu1:main_processor|DPandMMD:thedatapath|pc:dapc|q[31]
+From Clock     : cpuClk
+To Clock       : cpuClk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'memClk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 18.33 MHz ( period = 54.570 ns )
+From           : cpu1:main_processor|control:thecontrol|ALU_op[0]
+To             : cpu1:main_processor|DPandMMD:thedatapath|ALUa:aluman|tresult[13]
+From Clock     : memClk
+To Clock       : memClk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'memClk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : system_memory:main_memory|altsyncram:altsyncram_component|altsyncram_ped1:auto_generated|q_a[28]
+To             : cpu1:main_processor|DPandMMD:thedatapath|ALUa:aluman|tresult[30]
+From Clock     : memClk
+To Clock       : memClk
+Failed Paths   : 1575
+
+Type           : Clock Hold: 'cpuClk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : cpu1:main_processor|control:thecontrol|present_state.state_2
+To             : cpu1:main_processor|DPandMMD:thedatapath|ALUa:aluman|tresult[30]
+From Clock     : cpuClk
+To Clock       : cpuClk
+Failed Paths   : 1342
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 2917
+
+--------------------------------------------------------------------------------------
+
